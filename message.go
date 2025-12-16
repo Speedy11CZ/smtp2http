@@ -1,4 +1,4 @@
-package smtp2http
+package main
 
 type EmailAddress struct {
 	Name    string `json:"name,omitempty"`

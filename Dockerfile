@@ -7,7 +7,6 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates bash
 WORKDIR /app
 COPY --from=builder /go/bin/smtp2http .
-RUN chmod +x /app/smtp2http
 EXPOSE 25
 
 ENTRYPOINT ["/app/smtp2http"]

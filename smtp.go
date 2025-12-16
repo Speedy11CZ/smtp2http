@@ -1,4 +1,4 @@
-package smtp2http
+package main
 
 import (
 	"encoding/base64"

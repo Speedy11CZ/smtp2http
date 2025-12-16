@@ -11,7 +11,6 @@ import (
 
 	"github.com/emersion/go-smtp"
 	"github.com/rs/zerolog/log"
-	"github.com/speedy11cz/smtp2http"
 )
 
 var (
@@ -43,7 +42,7 @@ func main() {
 	}
 
 	smtpServer := smtp.NewServer(smtp.BackendFunc(func(c *smtp.Conn) (smtp.Session, error) {
-		return smtp2http.NewSession(func(msg *smtp2http.EmailMessage) {
+		return NewSession(func(msg *EmailMessage) {
 			pr, pw := io.Pipe()
 			encoder := json.NewEncoder(pw)
 			encoder.SetEscapeHTML(false)
