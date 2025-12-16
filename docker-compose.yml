@@ -1,0 +1,9 @@
+services:
+  smtp2http:
+    container_name: smtp2http
+    restart: unless-stopped
+    image: ghcr.io/speedy11cz/smtp2http:latest
+    ports:
+      - "25:25"
+    command:
+      - "--webhook.base-url=http://localhost:8080/webhook/%s"
